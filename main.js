@@ -2,7 +2,28 @@
 const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
+
 // Your JavaScript code goes here!
+const heartObject = {'♡': FULL_HEART, '♥': EMPTY_HEART}//if the heart is empty it becomes full, if the heart is full it becomes empty
+const color = {"red": "", "": "red"}
+const likeBtns = document.querySelectorAll(".like-glyph")
+// console.log(likeBtns)
+for (all of likeBtns){
+  all.addEventListener("click", (e) =>{
+    mimicServerCall()
+    .then((respond) => {
+      e.target.innerText = heartObject[e.target.innerText]
+      e.target.style.color = color[e.target.style.color]
+    })
+    .catch((error) => {
+      document.getElementById("modal").className = ""
+      setTimeout(function() {
+        document.getElementById("modal").className = "hidden"
+      }, 3000)
+    })
+  })
+}
+
 
 
 
